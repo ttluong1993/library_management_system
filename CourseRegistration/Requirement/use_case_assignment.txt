@@ -1,2 +1,2 @@
-Đoàn Ngọc Giang Nam - search courses
-Nguyễn Đình Hải Nam - register courses
+Đoàn Ngọc Giang Nam - search courses(input/output data), supplementary specification
+Nguyễn Đình Hải Nam - register courses(input/output data), glossary
