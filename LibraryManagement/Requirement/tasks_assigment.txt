@@ -1,3 +1,12 @@
 Đoàn Ngọc Giang Nam:
+- library management use case diagram
+- use case specification, activity diagram and sequence diagram of use case register to borrow books
+
+
 Nguyễn Đình Hải Nam:
+- glossary and supplementary specification
+- use case specification, activity diagram and sequence diagram of use case add new book
+
 Tạ Thanh Lương:
+- check and correct use case diagram, glossary and supplementary specification
+- use case specification, activity diagram and sequence diagram of use case return books
