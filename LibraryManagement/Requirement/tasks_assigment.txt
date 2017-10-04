@@ -1,3 +1,5 @@
+-----Week 3-----
+
 Đoàn Ngọc Giang Nam:
 - library management use case diagram
 - use case specification, activity diagram and sequence diagram of use case register to borrow books
@@ -10,3 +12,17 @@ Nguyễn Đình Hải Nam:
 Tạ Thanh Lương:
 - check and correct use case diagram, glossary and supplementary specification
 - use case specification, activity diagram and sequence diagram of use case return books
+
+
+
+-----Week 4-----
+Đoàn Ngọc Giang Nam:
+- communication diagram and class diagram of use case register to borrow books
+- use case specification, activity diagram, communication diagram and class diagram of use case log in
+- combine class diagram
+
+
+Nguyễn Đình Hải Nam:
+- communication diagram and class diagram of use case add new book
+- use case specification, activity diagram, communication diagram and class diagram of use case register existing book
+- combined class diagram
