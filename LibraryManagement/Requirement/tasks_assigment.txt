@@ -26,3 +26,19 @@ Nguyễn Đình Hải Nam:
 - communication diagram and class diagram of use case add new book
 - use case specification, activity diagram, communication diagram and class diagram of use case register existing book
 - combined class diagram
+
+
+
+-----Week 5-----
+Đoàn Ngọc Giang Nam:
+- screen transition diagram
+- screen mock-up, wireframe file and specification of use case log in and register to borrow book
+
+
+Nguyễn Đình Hải Nam:
+- Standardize screen configuration 
+- screen mock-up, wireframe file and specification of use case add new book and register existing book
+
+Tạ Thanh Lương:
+- screen mock-up, wireframe file and specification of use case borrow book and return book
+
