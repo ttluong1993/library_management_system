@@ -42,3 +42,15 @@ Nguyễn Đình Hải Nam:
 Tạ Thanh Lương:
 - screen mock-up, wireframe file and specification of use case borrow book and return book
 
+
+
+-----Week 6-----
+Đoàn Ngọc Giang Nam:
+- class design and operation/method design of use case log in and register to borrow books
+
+
+Nguyễn Đình Hải Nam:
+- class design and operation/method design of use case add new book and add copy
+
+Tạ Thanh Lương:
+- class design and operation/method design of use case borrow book and return book
