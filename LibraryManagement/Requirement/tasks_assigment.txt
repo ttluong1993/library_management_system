@@ -54,3 +54,20 @@ Nguyễn Đình Hải Nam:
 
 Tạ Thanh Lương:
 - class design and operation/method design of use case borrow book and return book
+
+
+
+
+-----Week 7-----
+Đoàn Ngọc Giang Nam:
+- er diagram of use case log in and register to borrow books
+- er diagram and database design (sql file) of the library management system
+
+
+Nguyễn Đình Hải Nam:
+- er diagram of use case add new book and add copy
+- er diagram and database design (sql file) of the library management system
+
+Tạ Thanh Lương:
+- er diagram of use case borrow book and return book
+- er diagram and database design (sql file) of the library management system
