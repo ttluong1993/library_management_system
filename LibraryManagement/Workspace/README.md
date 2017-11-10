@@ -1,13 +1,15 @@
 # Library Manager Guide
 ## Install project guide
 
-Step 1: `git clone https://ttluong1993@bitbucket.org/t3min4l/isd.ict.20171-07.git`<br>
+Step 1: `git clone --rescursive https://ttluong1993@bitbucket.org/t3min4l/isd.ict.20171-07.git`<br>
+	if use 'git pull', run 'git submodule init && git submodule update`<br>
 
 Step 3: `cd <project-path>/application`<br>
 
-Step 3: `cp env-example .env` then edit `APP_NAME, APP_URL, DB_CONNECTION, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD` config<br>
+Step 3: `cp .env-example .env` then edit `APP_NAME, APP_URL, DB_CONNECTION, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD` config<br>
 
 Step 4: `cd <project-path>/laradock`<br>
+	``cp env-example .env`<br>
 
 Step 5: `docker-compose up -d nginx mysql`<br>
 
