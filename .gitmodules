@@ -1,0 +1,3 @@
+[submodule "LibraryManagement/Workspace/laradock"]
+	path = LibraryManagement/Workspace/laradock
+	url = https://github.com/Laradock/laradock.git
