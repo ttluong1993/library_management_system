@@ -6,7 +6,7 @@ Step 1: `git clone --rescursive https://ttluong1993@bitbucket.org/t3min4l/isd.ic
 
 Step 3: `cd <project-path>/application`<br>
 
-Step 3: `cp .env-example .env` then edit `APP_NAME, APP_URL, DB_CONNECTION, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD` config<br>
+Step 3: `cp .env.example .env` then edit `APP_NAME, APP_URL, DB_CONNECTION, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD` config<br>
 
 Step 4: `cd <project-path>/laradock`<br>
 	``cp env-example .env` then change `APPLICATION=../` to `APPLICATION=../application`<br>
@@ -32,5 +32,6 @@ Step 6:<br>
 Step 7:<br>
 * `cd <project-path>/application`<br>
 * `chmod -R [mode] .` into begin edit source code<br>
+* `git config core.fileMode false` into ignore file mode submition.<br>
 
 Step 8: go to `localhost` (or another local domain) on your browser.
