@@ -5,10 +5,12 @@
 @section('content')
 
 	<div class="row">
-		<h1 style="text-align: center">Create New Book</h1>  
+		<h1 style="text-align: center">Create New Book</h1>
+    {!! Form::open(array('route' => 'books.store', 'data-parsley-validate' => '')) !!}		
 		<div class="col-md-6">
 
-      {!! Form::open(array('route' => 'books.store', 'data-parsley-validate' => '')) !!}
+			<h3>Book Information</h3>
+
 				{{ Form::label('title', 'Title* ') }}
 				{{ Form::text('title', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
 
@@ -30,8 +32,22 @@
 					</div>
 				</div>
 				
-			{!! Form::close() !!}
 		</div>
+		<div class="col-md-6">
+
+			<h3>Copy Information</h3>
+
+				{{ Form::label('type_of_copy', 'Type of copy* ') }}
+				{{ Form::select('type_of_copy', ['referenced' => 'Referenced', 'borrowable' => 'Borrowable'], 'referenced', ['class' => 'form-control']) }}
+
+				<div>
+					{{ Form::label('price', 'Price* ') }}
+					{{ Form::text('price', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '6')) }}
+				</div> 
+				
+		</div>
+		{!! Form::close() !!}
+		
 	</div>
 
 @endsection

@@ -15,3 +15,4 @@ Route::get('/', function () {
     return view('pages/index');
 });
 Route::resource('books', 'BookController');
+Route::resource('copies', 'BookCopyController');

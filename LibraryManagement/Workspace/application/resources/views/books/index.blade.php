@@ -10,7 +10,7 @@
 		</div>
 
 		<div class="col-md-2">
-			<a href="{{ route('books.create') }}" class="btn btn-lg btn-block btn-primary btn-h1-spacing">Create New Book</a>
+			<a href="{{ route('books.create') }}" class="btn btn-lg btn-block btn-primary btn-h1-spacing">Create new book</a>
 		</div>
 		<div class="col-md-12">
 			<hr>
@@ -25,6 +25,7 @@
 					<th>Title</th>
 					<th>Authors</th>
           <th>Publisher</th>
+          <th>Number of Copies</th>
 					<th>Created At</th>
 				</thead>
 
@@ -37,6 +38,7 @@
 							<td><a href="{{ route('books.show', $book->id) }}">{{ $book->title }}</a></td>
 							<td>{{ $book->authors }}</td>
               <td>{{ $book->publisher }}</td>
+              <td>{{ $book->number_of_copies }}</td>
 							<td>{{ date('M j, Y', strtotime($book->created_at)) }}</td>
 						</tr>
 
