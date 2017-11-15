@@ -6,7 +6,7 @@
 
 	<div class="row">
 		<h1 style="text-align: center">Create New Book</h1>
-    {!! Form::open(array('route' => 'books.store', 'data-parsley-validate' => '')) !!}		
+    {!! Form::open(array('route' => 'book.store', 'data-parsley-validate' => '')) !!}		
 		<div class="col-md-6">
 
 			<h3>Book Information</h3>
@@ -28,7 +28,7 @@
 						{{ Form::submit('Create Book', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px;')) }}
 					</div>
 					<div class="col-md-6">
-						{!! Html::linkRoute('books.index', 'Cancel', null, array('class' => 'btn btn-danger btn-lg btn-block', 'style' => 'margin-top: 20px;')) !!}						
+						{!! Html::linkRoute('book.index', 'Cancel', null, array('class' => 'btn btn-danger btn-lg btn-block', 'style' => 'margin-top: 20px;')) !!}						
 					</div>
 				</div>
 				

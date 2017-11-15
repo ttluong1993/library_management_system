@@ -17,7 +17,7 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::all();
-        return view('books.index')->withBooks($books);
+        return view('book.index')->withBooks($books);
     }
 
     /**
@@ -27,7 +27,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('books.create');
+        return view('book.create');
     }
 
     /**
@@ -66,7 +66,7 @@ class BookController extends Controller
         $copy->book_id = $book->id;
         $copy->save();
         Session::flash('success', 'The book was successfully save!');
-        return redirect()->route('books.show', $book->id);
+        return redirect()->route('book.show', $book->id);
     }
 
     /**
@@ -78,7 +78,7 @@ class BookController extends Controller
     public function show($id)
     {
         $book = Book::find($id);
-        return view('books.show')->withBook($book);
+        return view('book.show')->withBook($book);
     }
 
     /**
@@ -89,7 +89,7 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        return view('copies.edit')->with('book_id', $id);
+
     }
 
     /**
@@ -101,29 +101,7 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // validate the data
-        $this->validate($request, array(
-            'number_of_copies' => 'required|numeric',
-            'price' => 'required|numeric',
-        ));
-        $book = Book::find($id);
-        $book->number_of_copies = $book->number_of_copies + $request->number_of_copies;
-        $book->save();
-
-        for($i = 1; $i <= $request->number_of_copies; $i++){
-            $copy = new BookCopy;
-            $copy->type_of_copy = $request->type_of_copy;
-            $copy->price = $request->price;
-            if($request->type_of_copy == 'Referenced'){
-                $copy->copy_status = 'referenced';        
-            }else {
-                $copy->copy_status = 'available';        
-            }
-            $copy->book_id = $id;
-            $copy->save();
-        }
-        Session::flash('success', 'The copies was successfully added!');
-        return redirect()->route('books.show', $id);
+    
     }   
 
     /**

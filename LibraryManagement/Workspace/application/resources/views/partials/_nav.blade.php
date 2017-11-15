@@ -16,7 +16,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="{{ Request::is('/') ? "active" : "" }}"><a href="/">Home</a></li>
-        <li class="{{ Request::is('books') ? "active" : "" }}"><a href="{{ route('books.index') }}">Books</a></li>
+        <li class="{{ Request::is('book') ? "active" : "" }}"><a href="{{ route('book.index') }}">Books</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">

@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Book;
+use App\BookCopy;
+use Log;
+use Session;
 
 class BookCopyController extends Controller
 {
@@ -21,9 +25,9 @@ class BookCopyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($book_id)
     {
-        
+        return view('copy.create')->with('book_id', $book_id);
     }
 
     /**
@@ -34,7 +38,33 @@ class BookCopyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate the data
+        $this->validate($request, array(
+            'number_of_copies' => 'required|numeric',
+            'price' => 'required|numeric',
+        ));
+        $book = Book::find($request->book_id);
+        if($book != null){
+            $book->number_of_copies = $book->number_of_copies + $request->number_of_copies;
+            $book->save();
+        }else{
+            Session::flash('falled', 'The book_id attribute is not valid!');
+        }
+
+        for($i = 1; $i <= $request->number_of_copies; $i++){
+            $copy = new BookCopy;
+            $copy->type_of_copy = $request->type_of_copy;
+            $copy->price = $request->price;
+            if($request->type_of_copy == 'Referenced'){
+                $copy->copy_status = 'referenced';        
+            }else {
+                $copy->copy_status = 'available';        
+            }
+            $copy->book_id = $request->book_id;
+            $copy->save();
+        }
+        Session::flash('success', 'The copies was successfully added!');
+        return redirect()->route('book.show', $request->book_id);
     }
 
     /**
@@ -56,7 +86,7 @@ class BookCopyController extends Controller
      */
     public function edit($id)
     {
-        return view('copies.edit')->with('book_id', $id);
+        return view('copy.edit')->with('book_id', $id);
     }
 
     /**

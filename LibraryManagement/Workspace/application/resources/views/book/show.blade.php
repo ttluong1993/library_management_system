@@ -13,7 +13,7 @@
 		</div>
 
 		<div class="col-md-2">
-			{!! Html::linkRoute('books.edit', 'Create new copy', array($book->id), array('class' => 'btn btn-lg btn-block btn-primary btn-h1-spacing')) !!}
+			{!! Html::linkRoute('book.copy.create', 'Create new copy', array($book->id), array('class' => 'btn btn-lg btn-block btn-primary btn-h1-spacing')) !!}
 		</div>
 		<div class="col-md-12">
 			<hr>

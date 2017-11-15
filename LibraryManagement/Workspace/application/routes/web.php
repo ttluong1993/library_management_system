@@ -14,5 +14,6 @@
 Route::get('/', function () {
     return view('pages/index');
 });
-Route::resource('books', 'BookController');
-Route::resource('copies', 'BookCopyController');
+Route::resource('book', 'BookController');
+Route::get('/book/{book_id}/copy/create', ['as' => 'book.copy.create', 'uses' => 'BookCopyController@create']);
+Route::post('/book/{book_id}/copy', ['as' => 'book.copy.store', 'uses' => 'BookCopyController@store']);
