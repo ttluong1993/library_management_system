@@ -55,7 +55,7 @@ class BookCopyController extends Controller
             $copy = new BookCopy;
             $copy->type_of_copy = $request->type_of_copy;
             $copy->price = $request->price;
-            if($request->type_of_copy == 'Referenced'){
+            if($request->type_of_copy == 'referenced'){
                 $copy->copy_status = 'referenced';        
             }else {
                 $copy->copy_status = 'available';        
