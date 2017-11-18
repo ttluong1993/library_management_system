@@ -19,7 +19,7 @@ class CreateBooksTable extends Migration
             $table->string('publisher');
             $table->string('authors');
             $table->string('isbn')->unique();
-            $table->integer('number_of_copies');
+            $table->integer('number_of_copies')->default(0);
             $table->timestamps();
         });
     }

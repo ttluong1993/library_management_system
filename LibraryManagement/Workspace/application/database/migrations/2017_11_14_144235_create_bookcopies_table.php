@@ -15,9 +15,9 @@ class CreateBookcopiesTable extends Migration
     {
         Schema::create('book_copies', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('type_of_copy');
+            $table->enum('type_of_copy', ['borrowable', 'referenced']);
             $table->integer('price');
-            $table->string('copy_status');
+            $table->enum('copy_status', ['available', 'referenced', 'borrowed', 'lent']);
             $table->timestamps();
         });
     }
