@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Book;
 use App\BookCopy;
-use Log;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class BookCopyController extends Controller
 {
@@ -23,6 +22,7 @@ class BookCopyController extends Controller
     /**
      * Show the form for creating a new resource.
      *
+     * @param $book_id
      * @return \Illuminate\Http\Response
      */
     public function create($book_id)
@@ -33,38 +33,36 @@ class BookCopyController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * @param $book_id
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($book_id, Request $request)
     {
         // validate the data
         $this->validate($request, array(
             'number_of_copies' => 'required|numeric',
             'price' => 'required|numeric',
+            'type_of_copy' => 'in:borrowable,referenced'
         ));
-        $book = Book::find($request->book_id);
-        if($book != null){
-            $book->number_of_copies = $book->number_of_copies + $request->number_of_copies;
-            $book->save();
-        }else{
-            Session::flash('falled', 'The book_id attribute is not valid!');
+
+        $book = (new Book())->find($book_id);
+
+        if (is_null($book)) {
+            Session::flash('fail', 'The book_id attribute is not valid!');
+
+            return redirect()->back();
         }
 
-        for($i = 1; $i <= $request->number_of_copies; $i++){
-            $copy = new BookCopy;
-            $copy->type_of_copy = $request->type_of_copy;
-            $copy->price = $request->price;
-            if($request->type_of_copy == 'referenced'){
-                $copy->copy_status = 'referenced';        
-            }else {
-                $copy->copy_status = 'available';        
-            }
-            $copy->book_id = $request->book_id;
-            $copy->save();
+        for($i = 1; $i <= $request->input('number_of_copies'); $i++){
+            $copy = new BookCopy();
+            $copy->createForBook($book, $request);
         }
+
+        $book->updateNumberOfCopies();
         Session::flash('success', 'The copies was successfully added!');
-        return redirect()->route('book.show', $request->book_id);
+
+        return redirect()->route('book.show', $book_id);
     }
 
     /**

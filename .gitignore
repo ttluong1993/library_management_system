@@ -1,2 +1,3 @@
 *.lock
+/.idea
 .~lock.activity_table.odt#
