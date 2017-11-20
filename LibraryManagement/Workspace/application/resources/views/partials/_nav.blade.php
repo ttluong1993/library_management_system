@@ -20,8 +20,12 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="{{ Request::is('/')||Request::is('home') ? "active" : "" }}"><a href="{{ route('home') }}">Home</a></li>
-                <li class="{{ Request::is('user') ? "active" : "" }}"><a href="#">Users</a></li>
-                <li class="{{ Request::is('book') ? "active" : "" }}"><a href="{{ route('book.index') }}">Books</a></li>
+                @role('admin')
+                    <li class="{{ Request::is('user') ? "active" : "" }}"><a href="#">Users</a></li>
+                @endrole
+                @role('admin', 'librarian')
+                    <li class="{{ Request::is('book') ? "active" : "" }}"><a href="{{ route('book.index') }}">Books</a></li>
+                @endrole
                 <li class="{{ Request::is('about') ? "active" : "" }}"><a href="{{ route('about') }}">About</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
